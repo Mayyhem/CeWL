@@ -811,8 +811,8 @@ catch :ctrl_c do
 							allow = false
 						end
 
-						if allowed_pattern && !a_url_parsed.path.match(allowed_pattern)
-							puts "Excluding path: #{a_url_parsed.path} based on allowed pattern" if verbose
+						if allowed_pattern && !a_url_parsed.to_s.match(allowed_pattern)
+							puts "Excluding URL: #{a_url_parsed.to_s} based on allowed pattern" if verbose
 							allow = false
 						end
 					end
